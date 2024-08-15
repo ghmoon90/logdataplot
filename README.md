@@ -10,13 +10,13 @@ The input file can be csv data, or excel data format.
 ## manual install 
 
 1.install python by download python installer from https://www.python.org/ftp/python </br>
-▲ you need to add path the python path to environment path. </br>
+▲ you need to add path the python path to environment path. </br></br>
 2. update the pip by 
 put this command to command line.
 ``` python
-python -m 
+python -m pip install --upgrade pip
 ```
-
+</br>
 3. install packages (dependency : matplotlib, pandas, tkinter)
    put this command to command line.
 ``` python
