@@ -12,15 +12,18 @@ The input file can be csv data, or excel data format.
 1.install python by download python installer from https://www.python.org/ftp/python 
 ▲ you need to add path the python path to environment path. 
 2. update the pip by 
-```
-
+``` python
+python -m 
 ```
 
 3. install packages (dependency : matplotlib, pandas, tkinter)
+``` python
+ pip install matplotlib pandas 
 ```
-
+or 
+``` python
+ pip install -r requirements.txt
 ```
-
 
 ## install by vbs file
 1. run install.bat or pkgset.vbs
