@@ -16,9 +16,10 @@ put this command to command line.
 ``` python
 python -m pip install --upgrade pip
 ```
-</br>
+
+
 3. install packages (dependency : matplotlib, pandas, tkinter)
-   put this command to command line.
+   put this command to command line. </br>
 ``` python
  pip install matplotlib pandas 
 ```
