@@ -35,9 +35,10 @@ or
 2. it will download python 3.7.9-amd64, update pip, install required package automatically.
 
 # user instruction 
-1. load files by click button.
-2. select a file from file select dropdown list
-3. select the data from the column select listbox, and click add button.
-4. to depict a graph on new window, click plot graph button.
-5. you can show or hide the grid by click grid checkbox.
-6. by remove the data from column, you can erase the data from selection, and hide the data on next graph. 
+1. run logplot.py by click button 
+2. load files by click button.
+3. select a file from file select dropdown list
+4. select the data from the column select listbox, and click add button.
+5. to depict a graph on new window, click plot graph button.
+6. you can show or hide the grid by click grid checkbox.
+7. by remove the data from column, you can erase the data from selection, and hide the data on next graph. 
