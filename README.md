@@ -5,6 +5,11 @@ This is python code building gui for depicting plot of log data imdiately at eve
 It is developed by chat GPT, and using tkinter, pandas, and matplotlib. 
 The input file can be csv data, or excel data format. 
 
+
+# environment 
+▲ OS : windows 
+▲ python based, dependency with pandas, matplotlib
+
 # install 
 
 ## manual install 
