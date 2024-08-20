@@ -23,7 +23,7 @@ class DataPlotterApp:
         menu_frame.pack(side=tk.TOP, fill=tk.X)
 
         # Button to load data files
-        self.load_button = tk.Button(menu_frame, text="Load Data Files (Excel/CSV)", command=self.load_data_files)
+        self.load_button = tk.Button(menu_frame, text="Load Data Files (CSV/Excel)", command=self.load_data_files)
         self.load_button.pack(side=tk.LEFT, padx=5)
 
         # Toggle button for grid
@@ -111,7 +111,7 @@ class DataPlotterApp:
                         data = pd.read_csv(file_path)
 
                     # Store the data and add the file to the dropdown
-                    file_name = file_path.split("/")[-1]
+                    file_name = file_path.split("\\")[-1]
                     self.data_files[file_name] = data
                     file_names.append(file_name)
 
@@ -161,7 +161,7 @@ class DataPlotterApp:
         selected_columns = [self.filtered_columns[int(i)] for i in selected_indices]
 
         for column in selected_columns:
-            display_item = f"{self.current_file}/{column}"
+            display_item = f"{self.current_file}\\{column}"
             if display_item not in self.selected_columns:
                 self.selected_columns.append(display_item)
                 self.display_listbox.insert(tk.END, display_item)
@@ -193,7 +193,7 @@ class DataPlotterApp:
         fig, ax = plt.subplots()
 
         for item in self.selected_columns:
-            file_name, column = item.split("/")
+            file_name, column = item.split("\\")
             ax.plot(self.data_files[file_name].index, self.data_files[file_name][column], label=item)
 
         ax.legend()
