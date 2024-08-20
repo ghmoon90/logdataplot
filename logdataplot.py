@@ -34,7 +34,7 @@ class DataPlotterApp:
 
         # Toggle time normalization button
         self.Tnorm_var = tk.BooleanVar(value=True)
-        self.Tnorm_button = tk.Checkbutton(menu_frame, text="Time Normalize", variable=self.grid_var)
+        self.Tnorm_button = tk.Checkbutton(menu_frame, text="Time Normalize", variable=self.Tnorm_var)
         self.Tnorm_button.pack(side=tk.LEFT, padx=5)
 
 
@@ -118,7 +118,7 @@ class DataPlotterApp:
                         data = pd.read_csv(file_path)
 
                     # Store the data and add the file to the dropdown
-                    file_name = file_path.split("\\")[-1]
+                    file_name = file_path.split("/")[-1]
                     self.data_files[file_name] = data
                     file_names.append(file_name)
 
