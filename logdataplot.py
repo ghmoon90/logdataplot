@@ -9,6 +9,7 @@ from tkinter import filedialog, messagebox
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+import numpy as np
 
 class DataPlotterApp:
     def __init__(self, root):
@@ -30,6 +31,12 @@ class DataPlotterApp:
         self.grid_var = tk.BooleanVar(value=True)
         self.grid_button = tk.Checkbutton(menu_frame, text="Show Grid", variable=self.grid_var)
         self.grid_button.pack(side=tk.LEFT, padx=5)
+
+        # Toggle time normalization button
+        self.Tnorm_var = tk.BooleanVar(value=True)
+        self.Tnorm_button = tk.Checkbutton(menu_frame, text="Time Normalize", variable=self.grid_var)
+        self.Tnorm_button.pack(side=tk.LEFT, padx=5)
+
 
         # Status line at the bottom
         self.status_label = tk.Label(root, text="No file loaded", bd=1, relief=tk.SUNKEN, anchor=tk.W)
@@ -192,9 +199,15 @@ class DataPlotterApp:
     def plot_data(self, graph_window):
         fig, ax = plt.subplots()
 
+
         for item in self.selected_columns:
             file_name, column = item.split("\\")
-            ax.plot(self.data_files[file_name].index, self.data_files[file_name][column], label=item)
+
+            if self.Tnorm_var.get() == True:
+                dx_arr = np.linspace(0,1,len(self.data_files[file_name].index))
+            else :
+                dx_arr = self.data_files[file_name].index 
+            ax.plot(dx_arr, self.data_files[file_name][column], label=item)
 
         ax.legend()
         ax.set_title("Data Plot")
